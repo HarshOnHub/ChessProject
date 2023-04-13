@@ -1,0 +1,126 @@
+.testColors{
+    color: #bde8f1;
+    color: #819fa7;
+    color: #5b6e74;
+    color: #f2f2f0;
+    color: #0d0d0d;
+}
+
+
+body{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    background-color: #819fa7;
+    padding: 40px 20px;
+}
+
+.board{
+    border: 5px solid #5b6e74;
+    border-radius: 4px;
+    width: fit-content;
+    margin: 0 10px 10px 10px;
+}
+
+.square{
+    margin: 0;
+    padding: 0;
+    height: 10vw;
+    width: 10vw;
+    max-width: 10vh;
+    max-height: 10vh;
+}
+.row{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.lightSquare{
+    background-color: #f2f2f0;
+}
+.darkSquare{
+    background-color: #5b6e74;
+}
+
+.peiceBgSetting{
+    background-size:contain;
+    background-position:center;
+}
+
+.BRook{
+    background-image: url(./images/Chess_rook_black.png);
+}
+.BKnight{
+    background-image: url(./images/Chess_knight_black.png);
+}
+.BBishop{
+    background-image: url(./images/Chess_bishop_black.png);
+}
+.BQueen{
+    background-image: url(./images/Chess_queen_black.png);
+}
+.BKing{
+    background-image: url(./images/Chess_king_black.png);
+}
+.BPawn{
+    background-image: url(./images/Chess_pawn_black.png);
+}
+
+.WRook{
+    background-image: url(./images/Chess_rook_white.png);
+}
+.WKnight{
+    background-image: url(./images/Chess_knight_white.png);
+}
+.WBishop{
+    background-image: url(./images/Chess_bishop_white.png);
+}
+.WQueen{
+    background-image: url(./images/Chess_queen_white.png);
+}
+.WKing{
+    background-image: url(./images/Chess_king_white.png);
+}
+.WPawn{
+    background-image: url(./images/Chess_pawn_white.png);
+}
+
+/* **************** ALERT BOX *************** */
+.dropboxcontainer{
+    background-color: #6f8991;
+    border-radius: 5px;
+    height: fit-content;
+    width: 30vw;
+    max-height: 80vh;
+    max-width: 80vh;
+    align-self: start;
+    display: flex vertical;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.dropbox{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    max-height: 12vw;
+}
+
+.capturedPieceDisplayClass{
+    height: 5vw;
+    width: 5vw;
+    max-width: 5vh;
+    max-height: 5vh;
+    /* border: 2px solid black; */
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+/*Maybe Add custom scrollbar styles */
+
+  
