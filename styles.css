@@ -64,41 +64,41 @@ body{
 }
 
 .BRook{
-    background-image: url(./images/Chess_rook_black.png);
+    background-image: url(images/Chess_rook_black.png);
 }
 .BKnight{
-    background-image: url(./images/Chess_knight_black.png);
+    background-image: url(images/Chess_knight_black.png);
 }
 .BBishop{
-    background-image: url(./images/Chess_bishop_black.png);
+    background-image: url(images/Chess_bishop_black.png);
 }
 .BQueen{
-    background-image: url(./images/Chess_queen_black.png);
+    background-image: url(images/Chess_queen_black.png);
 }
 .BKing{
-    background-image: url(./images/Chess_king_black.png);
+    background-image: url(images/Chess_king_black.png);
 }
 .BPawn{
-    background-image: url(./images/Chess_pawn_black.png);
+    background-image: url(images/Chess_pawn_black.png);
 }
 
 .WRook{
-    background-image: url(./images/Chess_rook_white.png);
+    background-image: url(images/Chess_rook_white.png);
 }
 .WKnight{
-    background-image: url(./images/Chess_knight_white.png);
+    background-image: url(images/Chess_knight_white.png);
 }
 .WBishop{
-    background-image: url(./images/Chess_bishop_white.png);
+    background-image: url(images/Chess_bishop_white.png);
 }
 .WQueen{
-    background-image: url(./images/Chess_queen_white.png);
+    background-image: url(images/Chess_queen_white.png);
 }
 .WKing{
-    background-image: url(./images/Chess_king_white.png);
+    background-image: url(images/Chess_king_white.png);
 }
 .WPawn{
-    background-image: url(./images/Chess_pawn_white.png);
+    background-image: url(images/Chess_pawn_white.png);
 }
 
 /* **************** PROFILE BOX *************** */
