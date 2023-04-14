@@ -8,20 +8,33 @@
 
 
 body{
+    padding: 0;
+    margin: 0;
+    background-color: #819fa7;
+}
+.flexHorizontal{
+    display: flex;
+    flex-direction: row;
+}
+.flexVertical{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.boardcontainer{
     align-items: center;
     justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 20px;
-    background-color: #819fa7;
-    padding: 40px 20px;
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+    /* display: flex;
+    flex-direction: column; */
 }
-
 .board{
     border: 5px solid #5b6e74;
     border-radius: 4px;
     width: fit-content;
-    margin: 0 10px 10px 10px;
+    margin: 0.3vw 0px;
 }
 
 .square{
@@ -47,6 +60,7 @@ body{
 .peiceBgSetting{
     background-size:contain;
     background-position:center;
+    background-repeat: no-repeat;
 }
 
 .BRook{
@@ -87,32 +101,35 @@ body{
     background-image: url(./images/Chess_pawn_white.png);
 }
 
-/* **************** ALERT BOX *************** */
-.dropboxcontainer{
-    background-color: #6f8991;
+/* **************** PROFILE BOX *************** */
+
+h4{
+    margin: 0.3vw;
+    color: #fff;
+}
+
+.pfp{
+    height: 5vw;
+    width: 5vw;
+    max-width: 7vh;
+    max-height: 7vh;
+    float: left;
+    border: 2px solid #5b6e74;
     border-radius: 5px;
-    height: fit-content;
-    width: 30vw;
-    max-height: 80vh;
-    max-width: 80vh;
-    align-self: start;
-    display: flex vertical;
-    padding: 10px;
-    overflow: scroll;
 }
 
 .dropbox{
     display: flex;
-    flex-wrap: wrap;
     overflow: scroll;
-    max-height: 12vw;
+    max-width: 60vw;
+    align-self: flex-start;
 }
 
 .capturedPieceDisplayClass{
-    height: 5vw;
-    width: 5vw;
-    max-width: 5vh;
-    max-height: 5vh;
+    height:3vw;
+    width: 3vw;
+    max-width: 3vh;
+    max-height: 3vh;
     /* border: 2px solid black; */
 }
 
@@ -120,7 +137,57 @@ body{
 ::-webkit-scrollbar {
     display: none;
   }
-  
-/*Maybe Add custom scrollbar styles */
+/**********Maybe Add custom scrollbar later onn...  */
 
-  
+
+/* **************** ALERT BOX *************** */
+.alertbox{
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.alertmessage{
+    position: relative;
+    width: 280px;
+    height: fit-content;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: #be8888;
+    opacity: 80%;
+    margin: 5px;
+    padding: 5px;
+    animation: alert_in 5s ease-in-out;
+}
+@keyframes alert_in{
+    0%{
+        right: -300px;
+    }
+    10%{
+        right: 0;
+    }
+    90%{
+        right: 0;
+        bottom: 0;
+        opacity: 100%;
+    }
+    100%{
+        right: 0;
+        bottom: -50px;
+        opacity: 0;
+    }
+}
+.cancelbutton{
+    position: relative;
+    left: 250px;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    text-align: center;
+    padding: 1px;
+    border-radius: 5px;
+    font-size: 10px;
+}

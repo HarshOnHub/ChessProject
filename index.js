@@ -105,11 +105,13 @@ function hasSameColorPiece(selectedPiece, destinationSquare){
 
 let currentColor = "white";
 let chosenPiece = "";
+let currentSquare;
 
-document.addEventListener("click", (event) =>{
+document.querySelector(".board").addEventListener("click", (event) =>{
     // Picking Up a Piece
     if(chosenPiece=="" && !event.target.classList.contains("capturedPiece")){
         let pieceWasSelected = 0;
+        currentSquare = event.target;
         for(let i=0;i<whitePeicesClasses.length;i++){
             if(currentColor === "white" && event.target.classList.contains(whitePeicesClasses[i])){
                 chosenPiece = whitePeicesClasses[i];
@@ -125,21 +127,27 @@ document.addEventListener("click", (event) =>{
             }
         }
         if(pieceWasSelected === 0){
-            console.log(`Its ${currentColor}s move`);
+            AlertNotif(`⚠️ Its ${currentColor}s move`);
         }
     }
     // Dropping A Piece 
     else{
         if(event.target.classList.contains("square") && !hasSameColorPiece(chosenPiece, event.target)){
-            for(let i=0;i<peicesClasses.length;i++){
-                if(event.target.classList.contains(peicesClasses[i])){
-                    event.target.classList.remove(peicesClasses[i]);
-                    capturedPieces.push(peicesClasses[i]);
-                    addToDropbox(peicesClasses[i]);
+            if(currentSquare != event.target){
+                for(let i=0;i<peicesClasses.length;i++){
+                    if(event.target.classList.contains(peicesClasses[i])){
+                        event.target.classList.remove(peicesClasses[i]);
+                        capturedPieces.push(peicesClasses[i]);
+                        addToDropbox(peicesClasses[i]);
+                    }
                 }
+                event.target.classList.add(chosenPiece);
+                chosenPiece = "";
             }
-            event.target.classList.add(chosenPiece);
-            chosenPiece = "";
+            else{
+                AlertNotif("⚠️ Cant place piece on the same square it was picked from.");
+            }
+            
         }  
     }
 })
@@ -160,3 +168,34 @@ function addToDropbox(capturedPiece){
     newCapturedPiece.classList.add("capturedPiece");
     dropbox.appendChild(newCapturedPiece);
 }
+
+// ************* Piece cant be placed on the square it was picked from ****************
+let cancelCount = 0;
+function AlertNotif(message){
+    let alertmessage = document.createElement("div");
+    alertmessage.classList.add("alertmessage");
+    
+        let cancelButton = document.createElement("button");
+        cancelButton.classList.add("cancelbutton");
+        cancelButton.innerText="X";
+        alertmessage.classList.add(`cancelNumber${cancelCount}`);
+        cancelButton.classList.add(`cancelNumber${cancelCount}`);
+        alertmessage.appendChild(cancelButton);
+        
+
+        let alerttext = document.createElement("div");
+        alerttext.innerHTML=message;
+
+        alertmessage.appendChild(alerttext);
+
+    document.querySelector(".alertbox").appendChild(alertmessage);
+
+    cancelButton.addEventListener("click", () => {
+        alertmessage.remove();
+      });
+
+    setTimeout(() => {
+        alertmessage.remove();
+    },5000)
+}
+

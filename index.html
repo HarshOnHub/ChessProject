@@ -8,16 +8,29 @@
     <title>ChessSomethingSomething</title>
 </head>
 <body>
-    <div class="board"></div>
+    <div class="boardcontainer">
+        <div class="profile flexHorizontal">
+            <img src="testImages/pfp.jpg" alt="" class="pfp">
+            <div class="flexVertical profileHeight">
+                <h4 class="blackName">My Name</h5>
+                <div class="whitedropbox dropbox"></div>
+            </div>
+        </div>
+        
+        <div class="board"></div>
+        <div class="profile flexHorizontal">
+            <img src="testImages/pfp.jpg" alt="" class="pfp">
+            <div class="flexVertical profileHeight">
+                <h4 class="whiteName">My Name</h5>
+                <div class="blackdropbox dropbox">
+                    <!-- <div class="test BPawn capturedPieceDisplayClass peiceBgSetting capturedPiece"></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="dropboxcontainer">
-        <div class="whitedropbox dropbox">
-            
-        </div>
-        <div class="blackdropbox dropbox">
-            
-            <!-- <div class="capturedPieceDisplayClass"></div> -->
-        </div>
+<!-- Th message apears from outside the screen...after reading user can cross it or it will fade away after a few seconds -->
+    <div class="alertbox"></div>
 
     <script src="index.js"></script>
 </body>
